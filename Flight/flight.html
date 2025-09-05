@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlust Flights</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
+  <style>
+    body{
+      overflow: scroll;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wanderlust Flights</h1>
+  </header>
+  <main>
+    <section class="booking-section">
+      <h2>Book Your Flight</h2>
+      <form id="flightForm">
+        <div class="from-to">
+          <div class="from">
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" placeholder="Enter Departure City">
+            <div class="calendar-icon" id="fromCalendarIcon"></div>
+          </div>
+          <div class="to">
+            <label for="to">To:</label>
+            <select id="to" name="to">
+              <option value="rio">Rio de Janeiro</option>
+              <option value="dubai">Dubai</option>
+              <option value="norway">Norway</option>
+              <option value="Italy">Italy</option>
+              <option value="aus">Australia</option>
+              <option value="Germany">Germany</option>
+            </select>
+          </div>
+        </div>
+        <div class="date-pickers">
+          <div class="date">
+            <label for="departureDate">Departure Date:</label>
+            <input type="text" id="departureDate" name="departureDate" placeholder="Select Departure Date">
+          </div>
+        </div>
+        <div class="flight-class">
+          <label for="flightClass">Flight Class:</label>
+          <select id="flightClass" name="flightClass">
+            <option value="economy">Economy (₹60000)</option>
+            <option value="business">Business (₹75000)</option>
+            <option value="premium">Premium (₹112500)</option>
+          </select>
+        </div>
+        <button type="button" onclick="searchFlights()">Search Flights</button>
+      </form>
+    </section>
+
+    <section id="flightResults" class="hidden">
+      <h2>Flight Results</h2>
+      <div id="flight1" class="flight"></div>
+      <div id="flight2" class="flight"></div>
+      <div id="flight3" class="flight"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+  <script>
+    flatpickr("#departureDate", {
+      minDate: "today",
+      dateFormat: "Y-m-d"
+    });
+
+    function searchFlights() {
+      var form = document.getElementById("flightForm");
+      var from = form.elements["from"].value;
+      var to = form.elements["to"].value;
+      var departureDate = form.elements["departureDate"].value;
+      var flightClass = form.elements["flightClass"].value;
+
+      var baseFare;
+      switch (flightClass) {
+        case "economy":
+          baseFare = 60000;
+          break;
+        case "business":
+          baseFare = 75000;
+          break;
+        case "premium":
+          baseFare = 112500;
+          break;
+      }
+
+      // Generate random departure times for each flight
+      var departureTime1 = generateRandomTime();
+      var departureTime2 = generateRandomTime();
+      var departureTime3 = generateRandomTime();
+
+      // Generate random fares for the flights within ±50 difference from the base fare
+      var fare1 = baseFare - Math.floor(Math.random() * 5001) + 2500; // Minus to get a fare below the base fare, plus 2500 to ensure at least 2500 difference
+      var fare2 = baseFare + Math.floor(Math.random() * 5001) - 2500; // Plus to get a fare above the base fare, minus 2500 to ensure at least 2500 difference
+      var fare3 = baseFare - Math.floor(Math.random() * 5001) + 2500;
+
+      // Get the flight results section
+      var flightResults = document.getElementById("flightResults");
+
+      // Create flight result elements and add them to the flight results section
+      var flight1 = document.getElementById("flight1");
+      var flight2 = document.getElementById("flight2");
+      var flight3 = document.getElementById("flight3");
+
+      flight1.textContent = "Flight 1: Departure from " + from + " to " + to + " on " + departureDate + " at " + departureTime1 + " - Fare: ₹" + fare1;
+      flight2.textContent = "Flight 2: Departure from " + from + " to " + to + " on " + departureDate + " at " + departureTime2 + " - Fare: ₹" + fare2;
+      flight3.textContent = "Flight 3: Departure from " + from + " to " + to + " on " + departureDate + " at " + departureTime3 + " - Fare: ₹" + fare3;
+
+      // Show the flight results section
+      flightResults.classList.remove("hidden");
+    }
+
+    function generateRandomTime() {
+      var hours = Math.floor(Math.random() * 24);
+      var minutes = Math.floor(Math.random() * 60);
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      return hours + ":" + minutes;
+    }
+  </script>
+</body>
+</html>

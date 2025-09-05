@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="italy.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel Booking</h1>
+    </header>
+    <main>
+        <section class="hotel" id="hotel1">
+            <img src="i1.jpg" alt="Hotel Sunshine">
+            <h2>Hotel Danieli,Venice</h2>
+            <p>Located in the heart of the city, Hotel Sunshine offers luxurious rooms with a beautiful city view.</p>
+            <p><strong>Price: $150 per night</strong></p>
+            <label for="checkin1">Check-in Date:</label>
+            <input type="date" id="checkin1">
+            <label for="checkout1">Check-out Date:</label>
+            <input type="date" id="checkout1">
+            <button onclick="bookHotel('Hotel Sunshine', 150, 'checkin1', 'checkout1')">Book Now</button>
+        </section>
+        <section class="hotel" id="hotel2">
+            <img src="i2.jpg" alt="Mountain Retreat">
+            <h2>The Gritti Palace,Venice</h2>
+            <p>Escape to the mountains and enjoy a serene stay at Mountain Retreat.</p>
+            <p><strong>Price: $200 per night</strong></p>
+            <label for="checkin2">Check-in Date:</label>
+            <input type="date" id="checkin2">
+            <label for="checkout2">Check-out Date:</label>
+            <input type="date" id="checkout2">
+            <button onclick="bookHotel('Mountain Retreat', 200, 'checkin2', 'checkout2')">Book Now</button>
+        </section>
+        <section class="hotel" id="hotel3">
+            <img src="i3.jpg" alt="Beach Paradise">
+            <h2>Belmond Hotel Caruso, Ravello</h2>
+            <p>Relax by the beach at Beach Paradise, featuring stunning ocean views and top-notch amenities.</p>
+            <p><strong>Price: $250 per night</strong></p>
+            <label for="checkin3">Check-in Date:</label>
+            <input type="date" id="checkin3">
+            <label for="checkout3">Check-out Date:</label>
+            <input type="date" id="checkout3">
+            <button onclick="bookHotel('Beach Paradise', 250, 'checkin3', 'checkout3')">Book Now</button>
+        </section>
+        <section class="hotel" id="hotel4">
+            <img src="i4.jpg" alt="Desert Oasis">
+            <h2>Villa d'Este, Lake Como</h2>
+            <p>Experience a unique stay at Desert Oasis, nestled in the beautiful desert landscape.</p>
+            <p><strong>Price: $180 per night</strong></p>
+            <label for="checkin4">Check-in Date:</label>
+            <input type="date" id="checkin4">
+            <label for="checkout4">Check-out Date:</label>
+            <input type="date" id="checkout4">
+            <button onclick="bookHotel('Desert Oasis', 180, 'checkin4', 'checkout4')">Book Now</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hotel . All rights reserved.</p>
+    </footer>
+    <script src="italy.js"></script>
+</body>
+</html>
