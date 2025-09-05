@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Reviews</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(1.webp);
+      background-size: cover;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .review {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 50px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+
+    .review:hover {
+      transform: scale(1.08);
+    }
+
+    .review img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+      
+    }
+
+    .review:hover img {
+      width: 160px;
+      height: 160px;
+    }
+
+    .review .details {
+      text-align: center;
+    }
+
+    .review .rating {
+      color: #f39c12;
+    }
+
+    .review .star {
+      color: #f39c12;
+    }
+
+    .feedback {
+      font-style: italic;
+    }
+
+    .review:hover .feedback {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="reviews">
+    <div class="review">
+      <img src="johndoe.jpg" alt="Profile Picture">
+      <div class="details">
+        <h2>John Doe</h2>
+        <p>Visited Norway</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        </div>
+        <p class="feedback">"Amazing experience! Highly recommended!"</p>
+      </div>
+    </div>
+
+    <!-- Repeat the review structure for the remaining reviews -->
+    <div class="review">
+      <img src="janesmith.jpg" alt="Profile Picture">
+      <div class="details">
+        <h2>Jane Smith</h2>
+        <p>Visited Rio</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span>
+        </div>
+        <p class="feedback">"Great trip, enjoyed the sights and sounds of Rio!"</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="davidjohnson.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>David Johnson</h2>
+        <p>Visited Dubai</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span>
+        </div>
+        <p class="feedback">"Nice trip, but could have been better."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="female2.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>Sarah Lee</h2>
+        <p>Visited Germany</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span><span class="star"></span>
+        </div>
+        <p class="feedback">"Had an average experience in Germany."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="male.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>Michael Brown</h2>
+        <p>Visited Australia</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span><span class="star"></span>
+        </div>
+        <p class="feedback">"Decent trip, but expected more."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="female3.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>Emily Taylor</h2>
+        <p>Visited Rio</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span><span class="star"></span><span class="star"></span>
+        </div>
+        <p class="feedback">"Rio was okay, wouldn't go back."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="male3.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>William Clark</h2>
+        <p>Visited Dubai</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        </div>
+        <p class="feedback">"Fantastic experience in Dubai!"</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="female4.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>Olivia White</h2>
+        <p>Visited Italy</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span><span class="star"></span><span class="star"></span>
+        </div>
+        <p class="feedback">"Italy was amazing."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="male5.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>James Miller</h2>
+        <p>Visited Norway</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        </div>
+        <p class="feedback">"Norway was amazing! Loved every bit of it."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="female5.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>Mary Johnson</h2>
+        <p>Visited Rio</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        </div>
+        <p class="feedback">"Rio was fantastic! Loved the culture."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="male4.jpg" alt="Profile Picture">
+      <div class="details">
+        <h2>Thomas Anderson</h2>
+        <p>Visited Australia</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star"></span>
+        </div>
+        <p class="feedback">"Had a good time in Australia."</p>
+      </div>
+    </div>
+
+    <div class="review">
+      <img src="female6.jpeg" alt="Profile Picture">
+      <div class="details">
+        <h2>Lisa Johnson</h2>
+        <p>Visited Dubai</p>
+        <div class="rating">
+          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        </div>
+        <p class="feedback">"Dubai was an amazing experience! Will come back again."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
