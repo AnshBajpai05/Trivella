@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 15px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image: url('boy-graphic-designer-cartoon-vector-37454392.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrolling of the background */
+        }
+
+        .form-container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque for better readability */
+            border-radius: 10px;
+            width: 80%; /* Set the width of the form */
+            max-width: 400px; /* Limit the maximum width of the form */
+            max-height: 80vh; /* Set a maximum height */
+            box-shadow: 0 0 30px black; /* More prominent shadow */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Increase margin-bottom for better spacing */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold; /* Make labels bold */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px; /* Slightly increase input font size */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: #4CAF50; /* Green border on focus */
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Outer shadow on focus */
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Button shadow */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049; /* Change the background color on hover */
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 768px) {
+            .form-container {
+                width: 90%; /* Adjust width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="myForm" action="connect.php" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age">
+            </div>
+
+            <div class="form-group">
+                <label for="days">Number of Days:</label>
+                <input type="number" id="days" name="days">
+            </div>
+
+            <div class="form-group">
+                <label for="people">Number of People:</label>
+                <input type="number" id="people" name="people">
+            </div>
+
+            <div class="form-group">
+                <label for="nationality">Nationality:</label>
+                <input type="text" id="nationality" name="nationality">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="">Please select</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="Rio">Rio</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Germany">Germany</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Clear previous error messages
+            const errors = document.querySelectorAll('.error');
+            errors.forEach(error => error.remove());
+
+            let isValid = true;
+
+            // Name validation
+            const name = document.getElementById('name').value;
+            if (!name) {
+                showError('name', 'Name is required');
+                isValid = false;
+            }
+
+            // Age validation
+            const age = document.getElementById('age').value;
+            if (!age) {
+                showError('age', 'Age is required');
+                isValid = false;
+            } else if (age <= 0) {
+                showError('age', 'Age must be a positive number');
+                isValid = false;
+            }
+
+            // Number of Days validation
+            const days = document.getElementById('days').value;
+            if (!days) {
+                showError('days', 'Number of days is required');
+                isValid = false;
+            } else if (days <= 0) {
+                showError('days', 'Number of days must be a positive number');
+                isValid = false;
+            }
+
+            // Number of People validation
+            const people = document.getElementById('people').value;
+            if (!people) {
+                showError('people', 'Number of people is required');
+                isValid = false;
+            } else if (people <= 0) {
+                showError('people', 'Number of people must be a positive number');
+                isValid = false;
+            }
+
+            // Nationality validation
+            const nationality = document.getElementById('nationality').value;
+            if (!nationality) {
+                showError('nationality', 'Nationality is required');
+                isValid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email) {
+                showError('email', 'Email is required');
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                showError('email', 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            // Location validation
+            const location = document.getElementById('location').value;
+            if (!location) {
+                showError('location', 'Location is required');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // Here you can add code to submit the form data to the server
+            }
+        });
+
+        function showError(fieldId, errorMessage) {
+            const field = document.getElementById(fieldId);
+            const error = document.createElement('div');
+            error.className = 'error';
+            error.style.color = 'red';
+            error.style.marginTop = '5px';
+            error.textContent = errorMessage;
+            field.parentNode.appendChild(error);
+        }
+    </script>
+</body>
+</html>

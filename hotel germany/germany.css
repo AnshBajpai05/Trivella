@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hotel {
+    background-color: white;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(11, 17, 205, 0.985);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.hotel:hover {
+    transform: scale(1.05);
+}
+
+.hotel img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.hotel h2 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #0066cc;
+}
+
+.hotel p {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+label {
+    margin-top: 0.5rem;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="date"] {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 2px 5px rgba(28, 179, 217, 0.919);
+}
+
+button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlust Flights</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.css">
+  <style>
+    body {
+      background-image: url('pilot-cartoon-character-vector-37398011.avif');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.5); /* Slightly transparent background */
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1; /* Ensure the header stays above other elements */
+    }
+    .booking-section {
+      max-width: 800px; /* Increased max-width */
+      padding: 40px; /* Increased padding */
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.8); /* Set slightly transparent background color */
+    }
+    .from-to, .date-pickers, .flight-class, button {
+      margin-bottom: 30px; /* Increased margin-bottom */
+    }
+    .flight {
+      margin-bottom: 20px; /* Increased margin-bottom */
+    }
+    .hidden {
+      display: none;
+    }
+    .btn-primary {
+      display: block;
+      margin: 0 auto; /* Center the button */
+    }
+    .flight-link {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Air Flyier</h1>
+  </header>
+  <main>
+    <section class="booking-section">
+      <h2>Book Your Flight</h2>
+      <form id="flightForm">
+        <div class="from-to">
+          <div class="from">
+            <label for="from">From:</label>
+            <input type="text" id="from" name="from" class="form-control" placeholder="Enter Departure City">
+          </div>
+          <div class="to">
+            <label for="to">To:</label>
+            <select id="to" name="to" class="form-control">
+              <option value="" disabled selected>Enter Destination</option>
+              <option value="rio">Rio de Janeiro</option>
+              <option value="dubai">Dubai</option>
+              <option value="norway">Norway</option>
+              <option value="italy">Italy</option>
+              <option value="australia">Australia</option>
+              <option value="germany">Germany</option>
+            </select>
+          </div>
+        </div>
+        <div class="date-pickers">
+          <div class="date">
+            <label for="departureDate">Departure Date:</label>
+            <input type="date" id="departureDate" name="departureDate" class="form-control" placeholder="Select Departure Date">
+          </div>
+        </div>
+        <div class="flight-class">
+          <label for="flightClass">Flight Class:</label>
+          <select id="flightClass" name="flightClass" class="form-control">
+            <option value="" disabled selected>Select the Class</option>
+            <option value="economy">Economy (₹60000)</option>
+            <option value="business">Business (₹75000)</option>
+            <option value="premium">Premium (₹112500)</option>
+          </select>
+        </div>
+        <button type="button" onclick="searchFlights()" class="btn btn-primary">Search Flights</button>
+      </form>
+    </section>
+
+    <section id="flightResults" class="hidden">
+      <h2>Flight Results</h2>
+      <div id="flight1" class="flight"></div>
+      <div id="flight2" class="flight"></div>
+      <div id="flight3" class="flight"></div>
+    </section>
+  </main>
+  <script>
+    function searchFlights() {
+      // Array of destination cities and their corresponding ticket fares
+      const flights = [
+        { destination: 'rio', fare: { economy: 60000, business: 75000, premium: 112500 } },
+        { destination: 'dubai', fare: { economy: 80000, business: 100000, premium: 150000 } },
+        { destination: 'norway', fare: { economy: 70000, business: 90000, premium: 130000 } },
+        { destination: 'italy', fare: { economy: 50000, business: 70000, premium: 110000 } },
+        { destination: 'australia', fare: { economy: 90000, business: 110000, premium: 160000 } },
+        { destination: 'germany', fare: { economy: 75000, business: 95000, premium: 140000 } }
+      ];
+
+      // Get user input values
+      const departureCity = document.getElementById('from').value;
+      const destinationCity = document.getElementById('to').value;
+      const flightClass = document.getElementById('flightClass').value;
+
+      if (!departureCity || !destinationCity || !flightClass) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Find the selected destination in the flights array
+      const selectedFlight = flights.find(flight => flight.destination === destinationCity);
+
+      if (!selectedFlight) {
+        alert('No flights found for the selected destination.');
+        return;
+      }
+
+      // Display flight results
+      const flightResults = document.getElementById('flightResults');
+      flightResults.classList.remove('hidden');
+
+      // Display three random flights
+      const flight1 = document.getElementById('flight1');
+      flight1.innerHTML = `<a class="flight-link" href="#">Destination: ${destinationCity.charAt(0).toUpperCase() + destinationCity.slice(1)}, Fare: ₹${selectedFlight.fare[flightClass] + Math.floor(Math.random() * 700) - 2000}, Departure Time: ${getRandomDepartureTime()}</a>`;
+
+      const flight2 = document.getElementById('flight2');
+      flight2.innerHTML = `<a class="flight-link" href="#">Destination: ${destinationCity.charAt(0).toUpperCase() + destinationCity.slice(1)}, Fare: ₹${selectedFlight.fare[flightClass] + Math.floor(Math.random() * 700) - 2000}, Departure Time: ${getRandomDepartureTime()}</a>`;
+
+      const flight3 = document.getElementById('flight3');
+      flight3.innerHTML = `<a class="flight-link" href="#">Destination: ${destinationCity.charAt(0).toUpperCase() + destinationCity.slice(1)}, Fare: ₹${selectedFlight.fare[flightClass] + Math.floor(Math.random() * 700) - 2000}, Departure Time: ${getRandomDepartureTime()}</a>`;
+
+      // Add event listeners to flight links
+      document.querySelectorAll('.flight-link').forEach(link => {
+        link.addEventListener('click', showBookingSuccess);
+      });
+    }
+
+    // Function to generate random departure time
+    function getRandomDepartureTime() {
+      const hours = Math.floor(Math.random() * 24); // Random hour (0-23)
+      const minutes = Math.floor(Math.random() * 60); // Random minute (0-59)
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    }
+
+    // Function to show booking success alert
+    function showBookingSuccess(event) {
+      event.preventDefault();
+      alert('Your booking is successful!');
+    }
+  </script>
+</body>
+</html>

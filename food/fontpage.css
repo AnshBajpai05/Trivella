@@ -1,0 +1,118 @@
+body {
+    
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-image:url('header.jpg');
+    color: #fff;
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+
+header .logo {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #f7ba03e6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 100px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.395);
+    transition: all ease-out 0.5s;
+    cursor: pointer;
+}
+
+.container img:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #e79909;
+    color: #080000;
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.social-media img {
+    width: 30px;
+    height: auto;
+    margin: 0 5px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.2);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body expands to at least the height of the viewport */
+}
+
+footer {
+    background-color: #141818;
+    color: #e79810;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Pushes the footer to the bottom of the page */
+    width: 10%;
+    height: 20px;
+}
+body{
+    background-image: url('header.jpg');
+    background-repeat: no-repeat;
+}
