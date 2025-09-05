@@ -12,4 +12,4 @@ The website starts with an engaging Home Page and provides smooth navigation to 
 - ⭐ **Customer Reviews** for credibility  
 - 📝 **Registration Form** for user signups  
 - 📧 **Newsletter Subscription**  
-- 📱 **Responsive Design** for all devices  
+- 📱 **Partial Responsive Design**   
