@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Germany Travel Guide</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-y: scroll;
+        }
+
+        /* Styles for container layout */
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Styles for left side */
+        .left-side {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        /* Styles for header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Styles for "About Germany" section */
+        .about-germany {
+            margin-bottom: 20px;
+        }
+
+        .about-germany h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .about-germany p {
+            line-height: 1.6;
+        }
+
+        /* Styles for "Things to Do" section */
+        .things-to-do {
+            margin-bottom: 20px;
+        }
+
+        .things-to-do h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .things-to-do ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .things-to-do li {
+            margin-bottom: 5px;
+        }
+
+        /* Styles for right side */
+        .right-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .flip-box {
+            background-color: transparent;
+            flex-grow: 1;
+            margin-bottom: 20px;
+            perspective: 1000px;
+        }
+
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .flip-box-front {
+            background-color: #060505;
+            color: white;
+        }
+
+        .flip-box-back {
+            background-color: #f0f0f0;
+            color: black;
+            transform: rotateY(180deg);
+        }
+
+        .flip-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Styles for buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: calc(50% - 10px);
+            padding: 10px;
+            text-align: center;
+            background-color: #010202;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: #090f16;
+        }
+
+        /* Styles for footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-top: auto;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Germany Travel Guide</h1>
+    </header>
+    <div class="container">
+        <div class="left-side">
+            <div class="about-germany">
+                <h2>About Germany</h2>
+                <p>Germany, officially known as the Federal Republic of Germany, is a country in the heart of Europe with a rich culture, history, and an impressive variety of landscapes. From the Alps in the south to the North Sea in the north, Germany offers a wide range of travel destinations and activities.</p>
+                <p>The German cities, such as Berlin, Munich, and Hamburg, are known for their vibrant cultural scene, historical landmarks, and modern amenities. Discover Germany's rich history, visit medieval castles and palaces, and enjoy the diverse German cuisine.</p>
+                <p>Experience the stunning nature of Germany, from the picturesque vineyards of the Rhine Valley to the dense forests of the Black Forest. Germany is also known for its top-notch museums, theaters, and music events.</p>
+            </div>
+            <div class="things-to-do">
+                <h2>Things to Do</h2>
+                <ul>
+                    <li>Visit the Brandenburg Gate in Berlin</li>
+                    <li>Explore Neuschwanstein Castle</li>
+                    <li>Enjoy a boat trip on the Rhine River</li>
+                    <li>Admire the Cologne Cathedral</li>
+                    <li>Discover the beer gardens in Munich</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="BradenburgGate.html">
+                        <div class="flip-box-front">
+                            <img src="BradenburgGate.jpg" alt="Germany 1">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>Brandenburg Gate</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="SimpsonsDunes.html">
+                        <div class="flip-box-front">
+                            <img src="NeuschwansteinCastle.jpg" alt="Germany 2">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>Neuschwanstein Castle</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="RhineRiver.html">
+                        <div class="flip-box-front">
+                            <img src="RhineRiver.jpg" alt="Germany 3">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>Rhine River</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a href="hotel germany/germany.html" class="button">Book Hotel Now</a>
+                <a href="Form And Flight(fully ready)/flight.html" class="button">Book Flights</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Trivella Travel Guide</p>
+    </footer>
+</body>
+
+</html>

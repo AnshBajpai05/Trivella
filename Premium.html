@@ -1,0 +1,384 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Resort</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Footer */
+        .footer {
+            margin-top: 80px;
+            background-image: url(bgr.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .foot {
+            padding: 20px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .footlinks h4 {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .footlinks h4::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 70px;
+            left: 0;
+            bottom: -7px;
+            background: white;
+        }
+
+        .footlinks ul li {
+            margin-bottom: 15px;
+        }
+
+        .footlinks ul li a {
+            font-size: 17px;
+            color: #dddddd;
+            display: block;
+            transition: ease 0.30s;
+        }
+
+        .footlinks ul li a:hover {
+            transform: translate(6px);
+            color: white;
+        }
+
+        .social a {
+            font-size: 25px;
+            margin: 4px;
+            height: 40px;
+            width: 40px;
+            color: rgb(0, 0, 0);
+            background-color: white;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            transition: ease 0.30s;
+        }
+
+        .social a:hover {
+            transform: scale(1.2);
+        }
+
+        .end {
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 12px;
+        }
+
+        .end p {
+            font-size: 15px;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+
+        
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: large;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: rgb(255, 174, 0);
+            background-image: url(bgr.jpg);
+        }
+
+        header {
+            background-color: #333;
+            background-image: url(bgr.jpg);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #4444444c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .banner {
+            background-image: url('resort-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .content {
+            background-color: rgba(44, 41, 41, 0.344);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature img {
+            max-width: 600px;
+            max-height: 600px;
+        }
+
+        .feature {
+            margin-bottom: 20px;
+        }
+
+        .feature img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .feature h2 {
+            color: #fffcfc;
+            margin-top: 0;
+        }
+
+        .feature img {
+            max-width: 800px;
+            max-height: 800px;
+        }
+
+        footer {
+            background-image: url(bgr.jpg);
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2:hover {
+            color: #ffd700;
+            /* Gold color */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        h1 {
+            font-size: 25px;
+
+            transition: 0.3s ease color, o.3s ease transform;
+        }
+
+        h1:hover {
+            color: #ffd700;
+            /* Gold color */
+            transform: scale(1.9);
+        }
+
+        @keyframes rainbow {
+            0% {
+                box-shadow: 0 0 50px #ff0000;
+            }
+
+            14% {
+                box-shadow: 0 0 50px #ff7f00;
+            }
+
+            28% {
+                box-shadow: 0 0 50px #ffff00;
+            }
+
+            42% {
+                box-shadow: 0 0 50px #00ff00;
+            }
+
+            57% {
+                box-shadow: 0 0 50px #0000ff;
+            }
+
+            71% {
+                box-shadow: 0 0 50px #4b0082;
+            }
+
+            85% {
+                box-shadow: 0 0 50px #8f00ff;
+            }
+
+            100% {
+                box-shadow: 0 0 50px #ff0000;
+            }
+        }
+
+        .feature img:hover {
+            animation: rainbow 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Go Premium </h1>
+    </header>
+    <nav>
+        <h3><a href="drinks/drinks.html">Beverages🥤</a>
+            <a href="food/food.html">Cuisine🍔</a>
+            <a href="wines/wines.html">Cheers🍻</a>
+            <a href="party/party.html">Lets Party!!🎉</a>
+        </h3>
+    </nav>
+    <div class="container" id="about">
+        <div class="banner">
+            <h1>Experience Luxury</h1>
+        </div>
+        <div class="content">
+            <h2>About Us</h2>
+            <p>Our premium resort is nestled in a serene location offering breathtaking views and luxurious
+                accommodations. With world-class amenities and impeccable service, we strive to provide our guests with
+                an unforgettable experience.</p>
+        </div>
+    </div>
+    <div class="container" id="rooms">
+        <div class="content">
+            <h1>Hello Traveller Welcome To Trivella</h1>
+            <div class="feature">
+                <img src="aaa.jpg" alt="Room 1">
+                <h2>Deluxe Room</h2>
+                <p>Unwind in our spacious Deluxe Rooms, featuring modern amenities and elegant furnishings. Large
+                    windows bathe the room in natural light and offer stunning views, making your stay truly relaxing.
+                </p>
+            </div>
+            <div class="feature">
+                <img src="bbb.jpg" alt="Room 2">
+                <h2>Luxury Suite</h2>
+                <p>Indulge in unparalleled luxury and comfort in our exquisite Luxury Suites. These spacious havens
+                    boast panoramic vistas, designer furniture, and top-of-the-line amenities. Immerse yourself in an
+                    unforgettable experience designed for your complete relaxation.</p>
+            </div>
+            <div class="feature">
+                <img src="ccc.jpg" alt="Room 2">
+                <h2>Comfort Suite</h2>
+                <p>Experience the perfect blend of comfort and style in our Comfort Suites. These inviting rooms offer a
+                    tranquil space to unwind after a day of exploration. Enjoy modern conveniences and a cozy
+                    atmosphere, perfect for a rejuvenating stay.</p>
+            </div>
+            <div class="feature">
+                <img src="ddd.jpg" alt="Room 2">
+                <h2>Pleasing Suite</h2>
+                <p>Embrace a sense of serenity in our Pleasing Suites. Designed with your comfort in mind, these rooms
+                    feature plush furnishings, warm lighting, and a calming ambiance. Unwind on the private balcony and
+                    soak in the breathtaking views, creating lasting memories.</p>
+            </div>
+            <div class="feature">
+                <img src="eee.jpg" alt="Room 2">
+                <h2>Royal Suite</h2>
+                <p>Live like royalty in our opulent Royal Suites. These exquisite havens offer the ultimate in luxury
+                    living. From the expansive living area to the lavish bathroom, every detail is designed to impress.
+                    Indulge in unparalleled comfort and personalized service, making your stay truly unforgettable.</p>
+            </div>
+            <div class="feature">
+                <img src="ggg.jpg" alt="Room 2">
+                <h2>Family Suite</h2>
+                <p>Create lasting memories with your loved ones in our spacious Family Suites. These thoughtfully
+                    designed rooms offer ample space for families to relax and unwind. Enjoy separate sleeping areas, a
+                    comfortable living area, and modern amenities that cater to everyone's needs. Make your family
+                    vacation truly special in our Family Suites.</p>
+            </div>
+            <div class="feature">
+                <img src="hhh.jpg" alt="Room 2">
+                <h2>Accessible Suite</h2>
+                <p>Experience comfort and convenience in our fully-accessible suites. Designed with accessibility in
+                    mind, these rooms offer wider doorways, lowered features, and a roll-in shower for a worry-free
+                    stay. Enjoy all the amenities the resort has to offer with the peace of mind of a fully-accessible
+                    space.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="amenities">
+        <div class="content">
+            <h2 style="color: white;">Amenities</h2>
+            <p>Our resort offers a wide range of amenities including:</p>
+            <ul>
+                <li>Infinity Pool</li>
+                <li>Spa & Wellness Center</li>
+                <li>Fine Dining Restaurants</li>
+                <li>Fitness Center</li>
+                <li>Concierge Services</li>
+                <li>And Many More....</li>
+            </ul>
+        </div>
+    </div>
+    <section class="footer">
+        <div class="foot">
+            <div class="footer-content">
+                
+                <div class="footlinks">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/Form And Flight(fully ready)/form.html">Register</a></li>
+                        <li><a href="./About_Us.html">About Us</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footlinks">
+                    <h4>Connect</h4>
+                    <div class="social">
+                        <a href="" target="_blank"><i class='bx bxl-facebook'></i></a>
+                        <a href="" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                        <a href="" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                        <a href="" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                        <a href="" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                        <a href="" target="_blank"><i class='bx bxl-wordpress' ></i></a>
+                        <a href="" target="_blank"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+        <div class="end">
+            <p>Copyright © 2024 Trivella Travels All Rights Reserved.<br>Website developed by: Trivella Groups</p>
+        </div>
+    </section>
+    
+</body>
+
+</html>

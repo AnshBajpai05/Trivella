@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italy Travel Guide</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-y: scroll; /* Enable vertical scrolling */
+        }
+
+        /* Styles for container layout */
+        .container {
+            display: flex; /* Change to flexbox */
+            gap: 20px;
+            padding: 20px;
+            min-height: 100vh; /* Set minimum height to viewport height */
+        }
+
+        /* Styles for left side */
+        .left-side {
+            flex: 1; /* Allow the left side to grow and take up available space */
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto; /* Allow scrolling */
+        }
+
+        /* Styles for header */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9); /* Transparent white color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Text shadow */
+        }
+
+        /* Styles for "About Italy" section */
+        .about-italy {
+            margin-bottom: 20px;
+        }
+
+        .about-italy h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .about-italy p {
+            line-height: 1.6;
+        }
+
+        /* Styles for "Things to Do" section */
+        .things-to-do {
+            margin-bottom: 20px;
+        }
+
+        .things-to-do h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .things-to-do ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .things-to-do li {
+            margin-bottom: 5px;
+        }
+
+        /* Styles for right side */
+        .right-side {
+            flex: 1; /* Allow the right side to grow and take up available space */
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .flip-box {
+            background-color: transparent;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-box-front {
+            background-color: #060505;
+            color: black;
+            z-index: 2;
+        }
+
+        .flip-box-back {
+            background-color: #0f111317;
+            color: rgb(0, 0, 0);
+            transform: rotateY(180deg);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Styles for buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: calc(50% - 5px); /* Adjusted width to accommodate space between buttons */
+            padding: 10px;
+            text-align: center;
+            background-color: #010202;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #090f161c;
+        }
+
+        /* Styles for footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-top: auto; /* Push footer to the bottom */
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image styles */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Italy Travel Guide</h1>
+    </header>
+    <div class="container">
+        <div class="left-side">
+            <div class="about-italy">
+                <h2>About Italy</h2>
+                <p>Italy, officially known as the Italian Republic, is a country in Southern Europe famous for its art, culture, and history. It is home to the greatest number of UNESCO World Heritage Sites in the world, and its cuisine, fashion, and sports cars are renowned globally.</p>
+                <p>The Italian cities, such as Rome, Florence, and Venice, are known for their iconic landmarks, including the Colosseum, Uffizi Gallery, and St. Mark's Basilica. Explore Italy's rich history, visit ancient ruins, and indulge in authentic Italian food and wine.</p>
+                <p>Experience the breathtaking landscapes of Italy, from the stunning Amalfi Coast to the picturesque Tuscan countryside. Italy is also famous for its vibrant festivals, lively street markets, and
+
+ world-class opera and music performances.</p>
+            </div>
+            <div class="things-to-do">
+                <h2>Things to Do</h2>
+                <ul>
+                    <li>Visit the Colosseum in Rome</li>
+                    <li>Explore the canals of Venice</li>
+                    <li>Admire the art at the Uffizi Gallery in Florence</li>
+                    <li>Relax on the Amalfi Coast</li>
+                    <li>Indulge in pizza and pasta in Naples</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="Colosseum.html">
+                    <div class="flip-box-front">
+                        <img src="colosseum.jpg" alt="Italy 1">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Colosseum</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="VeniceCanals.html">
+                    <div class="flip-box-front">
+                        <img src="VeniceCanals.jpg" alt="Italy 2">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Venice Canals</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="AmalfiCoast.html">
+                    <div class="flip-box-front">
+                        <img src="AlmafiCoast.jpg" alt="Italy 3">
+                    </div>
+                    <div class="flip-box-back">
+                        <h2>Amalfi Coast</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button"><a href="italy\italy.html"> Book Hotel Now</a></button>
+                <button class="button"><a href="Form And Flight(fully ready)\flight.html">Book Flights</a></button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Trivella Travel Guide</p>
+    </footer>
+</body>
+
+</html>
+```

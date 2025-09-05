@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Coast Travel Guide</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .left-side {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgb(250, 250, 250);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-place {
+            margin-bottom: 20px;
+        }
+
+        .about-place h2 {
+            font-size: 24px;
+            font-size: larger;
+            color: #010101;
+            margin-bottom: 10px;
+        }
+
+        .about-place p {
+            line-height: 1.6;
+        }
+
+        .right-side {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 2;
+            font-size: 36px; 
+            color: black;
+        }
+
+        .overlay::before,
+        .overlay::after {
+            content: '';
+            position: absolute;
+            width: 140%;
+            height: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            transform: rotate(45deg);
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .overlay::before {
+            top: -50%;
+            left: -50%;
+        }
+
+        .overlay::after {
+            bottom: -50%;
+            right: -50%;
+        }
+
+        .right-side:hover .overlay {
+            opacity: 1;
+        }
+
+        .right-side:hover .overlay::before {
+            transform: rotate(45deg) translateX(-50%) translateY(50%);
+        }
+
+        .right-side:hover .overlay::after {
+            transform: rotate(45deg) translateX(50%) translateY(-50%);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            background-color: #000000;
+            color: rgb(243, 243, 243);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Golden Coast Travel Guide</h1>
+    </header>
+    <div class="main-container">
+        <div class="left-side">
+            <div class="about-place ">
+                <h2>About Golden Coast</h2>
+                <p>The Golden Coast, also known as the Gold Coast, is a popular tourist destination located in Queensland, Australia. It is renowned for its beautiful beaches, vibrant nightlife, and exciting attractions.</p>
+                <p>With over 70 kilometers of coastline, the Golden Coast offers an array of water activities such as surfing, swimming, and sailing. The region is also home to numerous theme parks, including Dreamworld, Sea World, and Warner Bros. Movie World, providing entertainment for visitors of all ages.</p>
+                <p>Explore the bustling city of Surfers Paradise, indulge in delicious cuisine at waterfront restaurants, and experience the vibrant local culture. Whether you're seeking relaxation on the beach or adventure in the city, the Golden Coast offers something for everyone.</p>
+                <div class="buttons">
+                    <button class="button">Book Hotel Now</button>
+                    <button class="button">Explore Theme Parks</button>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <img src="GoldenCoast.jpg" alt="Golden Coast" class="image">
+            <div class="overlay" >Gold Coast</div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Australia Travel Guide</p>
+    </footer>
+</body>
+
+</html>

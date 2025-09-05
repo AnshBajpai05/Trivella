@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australia Travel Guide</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-y: scroll;
+        }
+
+        /* Container layout */
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Left side */
+        .left-side {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* About Australia section */
+        .about-australia,
+        .things-to-do {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Right side */
+        .right-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .flip-box {
+            background-color: transparent;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-box-front {
+            background-color: #060505;
+            color: black;
+            z-index: 2;
+        }
+
+        .flip-box-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .flip-box-back {
+            background-color: #0f111317;
+            color: rgb(0, 0, 0);
+            transform: rotateY(180deg);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button {
+            width: calc(50% - 5px);
+            padding: 10px;
+            text-align: center;
+            background-color: #010202;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #090f161c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-top: auto;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Australia Travel Guide</h1>
+    </header>
+    <div class="container">
+        <div class="left-side">
+            <div class="about-australia">
+                <h2>About Australia</h2>
+                <p>Australia beckons with glittering beaches, vibrant cities, and otherworldly landscapes.</p>
+                <p>From the iconic Outback's red earth to the Great Barrier Reef's technicolor underwater world, encounter unique wildlife and indigenous culture.</p>
+                <p>Find adventure, relaxation, or a bit of both down under.</p>
+            </div>
+            <div class="things-to-do">
+                <h2>Things to Do</h2>
+                <ul>
+                    <li>Sydney Opera House: Experience the icon, ignite your senses.</li>
+                    <li>Live the golden life: Discover the Golden Coast.</li>
+                    <li>Uluru: Awaken to ancient wonder</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="SydneyOperaHouse.html">
+                        <div class="flip-box-front">
+                            <img src="A.jpg" height="215" width="595" alt="Australia 1">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>Sydney Opera House</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="GoldenCoast.html">
+                        <div class="flip-box-front">
+                            <img src="gold_coast.jpg" height="215" width="595" alt="Australia 2">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>Golden Coast</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <a href="Uluru.html">
+                        <div class="flip-box-front">
+                            <img src="uluru.jpg" height="215" width="595" alt="Australia 3">
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>Uluru</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button"><a href="hotel australia\australia.html"> Book Hotel Now</a></button>
+                <button class="button"><a href="Form And Flight(fully ready)\flight.html">Book Flights</a></button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Trivella Travel Guide</p>
+    </footer>
+</body>
+
+</html>
